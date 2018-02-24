@@ -41,12 +41,22 @@ def statement(title, body):
 # Custom Intents
 #
 
+def picture_intent(event, context):
+    urlopen('https://piiphole.localtunnel.me/take-picture')
+    return statement("Picture", "I have taken a picture outside.")
+
+
+def upload_intent(event, context):
+    urlopen('https://piiphole.localtunnel.me/upload')
+    return statement("Upload", "I have uploaded the image")
+
 def peephole_intent(event, context):
     try:
-        # urlopen('https://piiphole.localtunnel.me/take-picture')
-        # urlopen('https://piiphole.localtunnel.me/upload')
         camera_response = urlopen('https://piiphole.localtunnel.me/search-face')
-        body_response = '%s is at the door.' % camera_response.read().decode()
+        if camera_response == "":
+            body_response = '%s is at the door.' % camera_response.read().decode()
+        else:
+            body_response = 'There seems to be no one at the door'
     except:
         body_response = 'Hmm, something went wrong.'
         
@@ -95,6 +105,12 @@ def intent_router(event, context):
     # Custom Intents
     if intent == "TestIntent":
         return statement("Unknown", "Sorry, I'm not sure about that.")
+        
+    if intent == "PictureIntent":
+        return picture_intent(event, context)
+        
+    if intent == "UploadIntent":
+        return upload_intent(event, context)
     
     if intent == "PeepholeIntent":
         return peephole_intent(event, context)
