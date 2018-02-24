@@ -3,7 +3,7 @@ import boto3
 
 BUCKET = 'test-learn-josh'
 COLLECTION_ID = 'friends'
-PI_CAMERA_IMAGE = 'image1.jpg'
+PI_CAMERA_IMAGE = 'image.jpg'
 
 def index_faces(bucket, key, collection_id, image_id):
     rekognition = boto3.client('rekognition')
@@ -38,6 +38,7 @@ def search_faces_by_image(bucket, key, collection_id):
 
 def capture_image(pi_camera_image):
     camera = picamera.PiCamera()
+    camera.resolution = (640, 480)
     camera.capture(pi_camera_image)
     camera.close()
 
