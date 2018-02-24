@@ -31,4 +31,5 @@ def take_picture():
     return 'Ok'
 
 if __name__ == "__main__":
+    subprocess.call(['./localtunnel.sh &'], shell=True)
     app.run(port=5000)
