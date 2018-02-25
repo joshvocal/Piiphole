@@ -53,10 +53,12 @@ def upload_intent(event, context):
 def peephole_intent(event, context):
     try:
         camera_response = urlopen('https://piiphole.localtunnel.me/search-face')
-        if camera_response == "":
-            body_response = '%s is at the door.' % camera_response.read().decode()
-        else:
+        person_name = camera_response.read().decode()
+        if person_name == "":
             body_response = 'There seems to be no one at the door'
+        else:
+            body_response = person_name + " is at the door."
+
     except:
         body_response = 'Hmm, something went wrong.'
         
