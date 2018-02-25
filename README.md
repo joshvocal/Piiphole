@@ -7,33 +7,37 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+* Setup your Amazon Alexa and install the app on your phone
+
+* Set up your Raspberry Pi 3 with an operating system
 
 ```
-Give examples
+https://www.raspberrypi.org/documentation/installation/noobs.md
+```
+
+* Once you have your Raspberry Pi 3 setup, install the following:
+
+```
+sudo pip install flask
+sudo pip install boto3
+sudo pip install awscli
+sudo apt-get install nodejs npm node-semver
+sudo npm install localtunnel
 ```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+TODO
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+SSH into your Raspberry Pi 3 and run the following command
+
+```
+python alexa_servery.py
+```
+
+This will start the server on your Raspberry Pi and going on piiphole.localtunnel.me will allow you to execute commands on the Pi
 
 ## Built With
 
@@ -43,13 +47,13 @@ Add additional notes about how to deploy this on a live system
 * [Raspberry Pi Camera Module V2](https://www.amazon.ca/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS/ref=sr_1_1?s=electronics&ie=UTF8&qid=1519593328&sr=1-1&keywords=raspberry+pi+camera+module+v2&dpID=41oaX6czzQL&preST=_SY300_QL70_&dpSrc=srch)
 
 ### Software:
-* [Amazon Rekognition](https://aws.amazon.com/rekognition/) - Used to detect and recognize faces capture with the raspberry pi camera
-* [Amazon S3](https://aws.amazon.com/s3/) - Used to store the captured image uploaded from the raspberry pi
+* [Amazon Rekognition](https://aws.amazon.com/rekognition/) - Used to detect and recognize faces capture with the Raspberry Pi camera
+* [Amazon S3](https://aws.amazon.com/s3/) - Used to store the captured image uploaded from the Raspberry Pi
 * [Amazon Alexa Skills Kit](https://developer.amazon.com/alexa-skills-kit) - Used to trigger the Echo dot for the Piiphole skill
 * [Amazon Lambda](https://aws.amazon.com/lambda/) - Implementation of the skill
-* [Flask](http://flask.pocoo.org/) - Used to setup a web server that the raspberry pi hosts to connect with Lambda
+* [Flask](http://flask.pocoo.org/) - Used to setup a web server that the Raspberry Pi hosts to connect with Lambda
 * [Boto3](https://github.com/boto/boto3) - Library to connect with Amazon Web Services
-* [Localtunnel](https://localtunnel.github.io/www/) - Allows to interact with the raspberry pi web server on the home network
+* [Localtunnel](https://localtunnel.github.io/www/) - Allows to interact with the Raspberry Pi web server on the home network
  
 ## Authors
 
