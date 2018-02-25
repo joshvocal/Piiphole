@@ -34,7 +34,7 @@ TODO
 SSH into your Raspberry Pi 3 and run the following command
 
 ```
-python alexa_servery.py
+python alexa_server.py
 ```
 
 This will start the server on your Raspberry Pi and going on piiphole.localtunnel.me will allow you to execute commands on the Pi
