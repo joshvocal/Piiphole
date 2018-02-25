@@ -20,10 +20,8 @@ def upload():
 
 @app.route('/search-face')
 def search_face():
-    try:
-        return c.search_faces_by_image(c.BUCKET, c.PI_CAMERA_IMAGE, c.COLLECTION_ID)
-    except:
-        return ""
+    print(c.search_faces_by_image(c.BUCKET, c.PI_CAMERA_IMAGE, c.COLLECTION_ID))
+    return c.search_faces_by_image(c.BUCKET, c.PI_CAMERA_IMAGE, c.COLLECTION_ID)
 
 @app.route('/take-picture')
 def take_picture():
