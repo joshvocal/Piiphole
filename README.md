@@ -1,6 +1,8 @@
 # Piiphole - [DEMO VIDEO](https://youtu.be/NHSAuooeCOk)
 An Amazon Alexa skill that allows you peep who is at your door using Rekognition and a Raspberry Pi
 
+![](https://github.com/joshvocal/Piiphole/blob/master/demo.jpg)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
