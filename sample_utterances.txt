@@ -1,0 +1,11 @@
+AMAZON.CancelIntent Cancel
+AMAZON.HelpIntent Help
+AMAZON.StopIntent Stop
+TestIntent HelloWorld
+PeepholeIntent Who is it
+PeepholeIntent Who is there
+PeepholeIntent Who is outside
+UploadIntent Upload image
+UploadIntent Upload the image
+PictureIntent I heard a knock
+PictureIntent I heard a sound
