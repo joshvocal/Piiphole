@@ -51,6 +51,9 @@ def upload_intent(event, context):
     return statement("Upload", "I have uploaded the image")
 
 def peephole_intent(event, context):
+    urlopen('https://piiphole.localtunnel.me/take-picture')
+    urlopen('https://piiphole.localtunnel.me/upload')
+
     try:
         camera_response = urlopen('https://piiphole.localtunnel.me/search-face')
         person_name = camera_response.read().decode()
